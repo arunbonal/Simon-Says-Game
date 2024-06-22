@@ -1,11 +1,26 @@
-"Simon Says" is a classic memory game that has been enjoyed by people of all ages for decades. In this web project version, the game retains its timeless appeal while adding modern features for an enhanced user experience.
+# Description
+This "Simon Says" game implemented as a web project provides an engaging and interactive way for users to test and improve their memory skills. The game is developed using HTML, CSS, and JavaScript, and it features colorful buttons and responsive feedback mechanisms. Here's a detailed breakdown of how the game works and the code behind it:
 
-Upon entering the website, users are greeted with a colorful and inviting interface. The game's logo and instructions are prominently displayed, ensuring that players understand the rules right away. The background music is upbeat and engaging, setting the tone for a fun gaming experience.
+# Functionality :
 
-Players start by clicking the "Start" button, initiating the first round of Simon's commands. The game randomly generates a sequence of colors or sounds, which the player must then repeat by clicking the corresponding buttons or keys on the screen. As the game progresses, the sequences become longer and more challenging, testing the player's memory and concentration skills.
+# Game Initialization
+The game begins when the user presses any key on the keyboard. This triggers the keypress event listener that starts the game if it hasn't already started.
 
-To keep players engaged, the web project includes interactive elements such as score tracking, level progression, and high score boards. Players can compete against themselves or challenge friends to beat their scores, adding a competitive element to the game.
+# Game Sequence and User Sequence
+gameSeq is an array that stores the sequence of colors that the game generates.
+userSeq is an array that stores the sequence of colors the user clicks.
 
-The design of the web project is responsive, ensuring compatibility across various devices and screen sizes. It is also optimized for performance, allowing for smooth gameplay without any lag or interruptions.
+# Level Progression
+The levelUp function is called to increase the game level, update the display, and add a new color to the sequence. It chooses a random color from the predefined btns array, adds it to gameSeq, and flashes the corresponding button.
 
-Overall, this web project version of Simon Says is a delightful blend of nostalgia and modern gaming, providing hours of entertainment for players of all skill levels.
+# User Interaction
+Each button has an event listener for the click event, which triggers the btnPress function. This function records the user's choice, adds it to userSeq, and checks if the user's input matches the game sequence using the checkAns function.
+
+# Sequence Matching
+The checkAns function compares the user's input with the game sequence. If the user correctly matches the sequence, the game progresses to the next level. If the user makes a mistake, the game ends, and the screen displays a "Game Over" message along with the user's score.
+
+# Visual Feedback
+The gameFlash and userFlash functions provide visual feedback by temporarily changing the button colors when they are part of the game sequence or clicked by the user, respectively.
+
+# Game Reset
+The reset function reinitializes the game variables, allowing the user to start a new game.
